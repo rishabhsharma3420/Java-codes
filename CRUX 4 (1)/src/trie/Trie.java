@@ -100,7 +100,7 @@ public class Trie {
 		System.out.println("\""+numwords+"\"");
 		return;
 	}
-	
+	//hello world
 	public void numofnodes(){
 		System.out.println("~"+numnode+"~");
 		return;
