@@ -1,0 +1,28 @@
+package heap;
+
+import java.util.ArrayList;
+
+public class Heap {
+	private ArrayList<Integer> data = new ArrayList<>();
+	private boolean ismin;
+
+	public Heap(boolean ismin) {
+		this.ismin = ismin;
+	}
+
+	public int size() {
+		return data.size();
+	}
+
+	public boolean isEmpty() {
+		return data.isEmpty();
+	}
+
+	public void display() {
+		System.out.println(data);
+	}
+
+	public void add(int value) {
+		
+	}
+}

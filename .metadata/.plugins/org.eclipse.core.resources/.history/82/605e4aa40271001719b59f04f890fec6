@@ -1,0 +1,221 @@
+package genericTrees;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class GenericTree {
+	private class Node {
+		int data;
+		ArrayList<Node> child = new ArrayList<>();
+	}
+
+	private Node root;
+	private int size;
+
+	public GenericTree() {
+		Scanner scn = new Scanner(System.in);
+		root = create_treeG(null, -1, scn);
+	}
+
+	private Node create_treeG(Node roott, int childindx, Scanner scn) {
+		// display
+		if (roott == null) {
+			System.out.println("Enter root ka data");
+		} else {
+			System.out.println("Enter data of parent of index " + roott.data + " " + childindx);
+		}
+		// input
+		roott = new Node();
+		roott.data = scn.nextInt();
+		System.out.println("number of children");
+		int number = scn.nextInt();
+		for (int i = 0; i < number; i++) {
+			Node childd = create_treeG(roott, i, scn);
+			size++;
+			roott.child.add(childd);
+		}
+		return roott;
+	}
+
+	public int size() {
+		return size;
+	}
+
+	public void display() {
+		display_1(root);
+		return;
+	}
+
+	private void display_1(Node parent) {
+		System.out.print(parent.data + "=>");
+		for (int i = 0; i < parent.child.size(); i++) {
+			System.out.print(parent.child.get(i).data + " ");
+		}
+		System.out.println(".");
+		for (int i = 0; i < parent.child.size(); i++) {
+			display_1(parent.child.get(i));
+		}
+		return;
+	}
+
+	public boolean isEmpty() {
+		if (size == 0) {
+			return true;
+
+		} else {
+			return false;
+		}
+	}
+
+	public int size2() {
+		return size2(root);
+	}
+
+	private int size2(Node node) {
+		int sz = 0;
+		for (Node child : node.child) {
+			int cs = size2(child);
+			sz = sz + cs;
+		}
+		sz++;
+		return sz;
+	}
+
+	public int max() {
+		return max(root);
+	}
+
+	private int max(Node node) {
+		int max = node.data;
+		for (Node child : node.child) {
+			int ans = max(child);
+			if (ans > max) {
+				max = ans;
+			}
+		}
+		return max;
+	}
+
+	public int height() {
+		return height(root);
+	}
+
+	private int height(Node node) {
+		int height = -1;
+		for (Node child : node.child) {
+			int ans = height(child);
+			if (ans > height) {
+				height = ans;
+			}
+		}
+		return height + 1;
+	}
+
+	public boolean find(int data) {
+		return find(root, data);
+	}
+
+	private boolean find(Node node, int data) {
+		if (node.data == data) {
+			return true;
+		}
+		for (Node child : node.child) {
+			boolean fic = find(child, data);
+			if (fic == true) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public void mirror() {
+		mirror(root);
+	}
+
+	private void mirror(Node node) {
+		for (Node c : node.child) {
+			mirror(c);
+			node.child = rotate(node.child);
+		}
+	}
+
+	private ArrayList<Node> rotate(ArrayList<Node> arr) {
+		ArrayList<Node> ans = new ArrayList<>();
+		for (int i = 0; i < arr.size(); i++) {
+			ans.add(arr.get(i));
+		}
+		return ans;
+	}
+
+	public void printAtDepth(int d) {
+		printatdepth(root, d, 1);
+	}
+
+	private void printatdepth(Node node, int d, int a) {
+		for (Node child : node.child) {
+			printatdepth(child, d, a + 1);
+			if (d == a) {
+				System.out.print(child.child);
+				a = 1;
+			}
+		}
+		return;
+	}
+
+	public void preorder() {
+		preorder(root);
+	}
+
+	private void preorder(Node node) {
+		System.out.print(node.data + "\t");
+		for (Node child : node.child) {
+			preorder(child);
+		}
+	}
+
+	public void postorder() {
+		postorder(root);
+	}
+
+	private void postorder(Node node) {
+
+		for (Node child : node.child) {
+			postorder(child);
+		}
+		System.out.print(node.data + "\t");
+	}
+
+	public void levelOrder() {
+		LinkedList<Node> one = new LinkedList<>();
+		Node node = root;
+		one.addLast(node);
+
+		while (one.size() != 0) {
+			Node temp = one.removeFirst();
+			System.out.print(temp.data + "\t");
+			for (Node child : temp.child) {
+				one.addLast(child);
+			}
+		}
+	}
+
+	public void levelOrderlinewise() {
+		LinkedList<Node> one = new LinkedList<>();
+		Node node = root;
+		one.addLast(node);
+		LinkedList<Node> two = new LinkedList<>();
+		while (one.size() != 0) {
+			Node temp = one.removeFirst();
+			System.out.print(temp.data + "\t");
+			for (Node child : temp.child) {
+				two.addLast(child);
+			}
+			if (one.size() == 0) {
+				one = two;
+				two = new LinkedList<>();
+				System.out.println();
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.xml.bind.ParseConversionEvent"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSpinnerUI"/>
+<fullyQualifiedTypeName name="com.sun.javafx.collections.SortableList"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.schemagen.xmlschema.List"/>
+<fullyQualifiedTypeName name="july10.Arraysrec"/>
+<fullyQualifiedTypeName name="july11.Arraylist"/>
+<fullyQualifiedTypeName name="July4.Exitpoint"/>
+<fullyQualifiedTypeName name="July4.one"/>
+<fullyQualifiedTypeName name="july16.Lexico"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="oops.Queue"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="oops.DynamicStack"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.metal.MetalIconFactory.FolderIcon16"/>
+<fullyQualifiedTypeName name="july20.LinkedList.Heapmover"/>
+<fullyQualifiedTypeName name="july20.LinkedList"/>
+<fullyQualifiedTypeName name="javax.xml.soap.Node"/>
+<fullyQualifiedTypeName name="genericTrees.GenericTree.Node"/>
+<fullyQualifiedTypeName name="genericTrees.GenericTree.heapmover"/>
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="genericTrees.GenericTree.Heapmover"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="genericTrees.GenericTree"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="binaryTree.BinaryTree.DiaPair"/>
+<fullyQualifiedTypeName name="binaryTree.BinaryTree.bal"/>
+<fullyQualifiedTypeName name="binaryTree.BinaryTree.bst"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="oops.DynamicQueue"/>
+<fullyQualifiedTypeName name="binaryTree.BinaryTree.marker"/>
+<fullyQualifiedTypeName name="binaryTree.BinaryTree"/>
+<fullyQualifiedTypeName name="binaryTree.BinaryTree.Node"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="org.w3c.dom.Node"/>
+<fullyQualifiedTypeName name="bst.Bst.Node"/>
+<fullyQualifiedTypeName name="bst.Bst"/>
+<fullyQualifiedTypeName name="bst.Bst.heapmover"/>
+<fullyQualifiedTypeName name="heap.Heap"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+</qualifiedTypeNameHistroy>

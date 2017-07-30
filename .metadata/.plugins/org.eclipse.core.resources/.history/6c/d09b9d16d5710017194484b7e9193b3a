@@ -1,0 +1,11 @@
+package binaryTree;
+
+public class Client {
+
+	public static void main(String[] args) {
+		BinaryTree b=new BinaryTree();
+		b.display();
+
+	}
+
+}

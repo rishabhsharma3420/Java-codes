@@ -1,0 +1,58 @@
+package trie;
+
+import java.util.HashMap;
+
+public class Trie {
+
+	private class Node {
+		Character data;
+		boolean eow;
+		HashMap<Character, Node> child = new HashMap<>();
+	}
+
+	private Node root = new Node();
+	private int numwords = 0;
+	private int numnode = 1;
+
+	public void addword(String word) {
+		addword(root, word);
+	}
+
+	private void addword(Node node, String word) {
+		if (word.length() == 0) {
+			numnode++;
+			node.eow = true;
+			return;
+		}
+		Character ch = word.charAt(0);
+		String ros = word.substring(1);
+		Node child = node.child.get(ch);
+		if (child != null) {
+			addword(child, ros);
+		} else {
+			numwords++;
+			Node newchild = new Node();
+			newchild.data = ch;
+			newchild.child.put(ch, child);
+			addword(newchild, ros);
+		}
+	}
+
+	public boolean searchWord(String word){
+		return searchWord(root,word);
+	}
+	
+	private boolean searchWord(Node node,String word){
+		if(word.length()==0){
+			return node.eow;
+		}
+		Character ch=word.charAt(0);
+		String ros=word.substring(1);
+		Node child=node.child.get(ch);
+		if(child!=null){
+			return searchWord(child, ros);
+		}else{
+			return false;
+		}
+	}
+}

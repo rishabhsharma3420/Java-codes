@@ -1,0 +1,13 @@
+package heap;
+
+import java.util.ArrayList;
+
+public class Heap {
+	private ArrayList<Integer> data = new ArrayList<>();
+	private boolean ismin;
+
+	public Heap(boolean ismin) {
+		this.ismin = ismin;
+	}
+
+}

@@ -1,0 +1,8 @@
+package oops;
+
+public class skadl {
+	public class stackusingQueues {
+		DynamicQueue dq = new DynamicQueue(50);
+	}
+
+}

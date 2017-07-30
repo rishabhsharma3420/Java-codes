@@ -1,0 +1,49 @@
+package july20;
+
+public class Client {
+
+	public static void main(String[] args) throws Exception {
+		LinkedList list = new LinkedList();
+		list.addlast(10);
+		list.addlast(20);
+		list.addlast(30);
+		list.addlast(40);
+		list.addlast(50);
+		list.addlast(60);
+//		list.addlast(70);
+//		list.addlast(80);
+//		list.addlast(90);
+		list.display();
+		// list.size();
+		// list.addstart(0);
+		// list.display();
+		// list.addmid(90, 2);
+		// list.display();
+		// list.reversedataR();
+		// list.display();
+		 list.krev(3);
+		 list.display();
+		// System.out.println(list.lastindex(2));
+		// System.out.println(list.palindrome());
+//		LinkedList l1 = new LinkedList();
+//		l1.addlast(10);
+//		l1.addlast(20);
+//		l1.addlast(30);
+//		l1.addlast(40);
+//		LinkedList l2 = new LinkedList();
+//		l2.addlast(11);
+//		l2.addlast(15);
+//		l2.addlast(21);
+//		l2.addlast(37);
+//		l1.display();
+//		l2.display();
+//		LinkedList l3 = l1.mergesortedlists(l2);
+//		l3.display();
+//		l3.fold();
+//		l3.display();
+//		l3=l3.mergesort();
+//		l3.display();
+
+	}
+
+}

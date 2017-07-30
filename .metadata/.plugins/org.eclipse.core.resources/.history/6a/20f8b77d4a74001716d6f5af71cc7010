@@ -1,0 +1,55 @@
+package hashmap;
+
+import java.util.ArrayList;
+//import java.util.ArrayList;
+import java.util.HashMap;
+//import java.util.Set;
+
+public class Hashmap_client {
+
+	public static void main(String[] args) {
+		String str = "aabbccddaa";
+		System.out.println(maxfreqchar(str));
+		int[] arr1={1,1,2,2,3};
+		int[] arr2={1,2,3,4,5};
+		intersection(arr1, arr2);
+	}
+
+	public static Character maxfreqchar(String str) {
+		HashMap<Character, Integer> hello = new HashMap<>();
+		for (int i = 0; i < str.length(); i++) {
+			Character ch = str.charAt(i);
+			if (hello.containsKey(ch)) {
+				hello.put(ch, hello.get(ch) + 1);
+			} else {
+				hello.put(ch, 1);
+			}
+		}
+		Character maxc = ' ';
+		int maxcf = -1;
+		ArrayList<Character> keys = new ArrayList<>(hello.keySet());
+		for (Character key : keys) {
+			int freq = hello.get(key);
+			if (freq > maxcf) {
+				maxcf = freq;
+				maxc = key;
+			}
+		}
+		return maxc;
+	}
+
+	public static ArrayList<Integer> intersection(int[] arr1,int[] arr2){
+		HashMap<Integer, Integer> hm=new HashMap<>();
+		ArrayList<Integer> arr=new ArrayList<>();
+		for(int i=0;i<arr1.length;i++){
+			int x=arr1[i];
+			if(hm.containsKey(x)){
+				hm.put(x, hm.get(x)+1);
+			}else{
+			hm.put(arr1[i], 1);}
+		}
+		System.out.println(hm);
+		return arr;
+	}
+
+}

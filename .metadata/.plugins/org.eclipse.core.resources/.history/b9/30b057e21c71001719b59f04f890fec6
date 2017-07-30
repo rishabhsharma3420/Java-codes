@@ -1,0 +1,12 @@
+package genericTrees;
+
+public class Client {
+
+	public static void main(String[] args) {
+		GenericTree a=new GenericTree();
+//		a.display();
+//		a.printAtDepth(1);
+		a.test(21);
+	}
+
+}

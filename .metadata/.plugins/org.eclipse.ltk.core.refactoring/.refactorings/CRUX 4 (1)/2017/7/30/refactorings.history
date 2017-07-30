@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CRUX 4 (1)/src/oops/skadl.java&apos; to &apos;stackusingQueues.java&apos;" description="Rename resource &apos;skadl.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/oops/skadl.java" name="stackusingQueues.java" stamp="1501067293130" updateReferences="true"/>
+</session>

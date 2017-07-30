@@ -1,0 +1,36 @@
+package hashmap;
+
+import java.util.ArrayList;
+//import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Hashmap_client {
+
+	public static void main(String[] args) {
+		String str = "aabbccddaa";
+		System.out.println(maxfreqchar(str));
+	}
+
+	public static Character maxfreqchar(String str) {
+		HashMap<Character, Integer> hello = new HashMap<>();
+		for (int i = 0; i < str.length(); i++) {
+			Character ch = str.charAt(i);
+			if (hello.containsKey(ch)) {
+				hello.put(ch, hello.get(ch) + 1);
+			} else {
+				hello.put(ch, 1);
+			}
+		}
+		Character maxc = ' ';
+		int maxcf = -1;
+		ArrayList<Character> keys = new ArrayList<>(hello.keySet());
+		for (Character key : keys) {
+			int freq = hello.get(key);
+			if (freq > maxcf) {
+				maxcf = freq;
+				maxc = key;
+			}
+		}
+		return maxc;
+	}
+}
