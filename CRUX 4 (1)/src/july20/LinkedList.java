@@ -223,6 +223,8 @@ public class LinkedList {
 
 	}
 
+	// this is a comment
+
 	public void reversepointerR() throws Exception {
 		if (size == 0) {
 			throw new Exception("LIST EMPTY");
