@@ -72,7 +72,7 @@ public class Trie {
 		Node child = node.child.get(ch);
 		if (child != null) {
 			removeWord(child, str);
-			if (node.eow == false && child.child.size() == 0) {
+			if (child.eow == false && child.child.size() == 0) {
 				node.child.remove(child);
 				numnode--;
 			}
@@ -100,7 +100,7 @@ public class Trie {
 		System.out.println("\""+numwords+"\"");
 		return;
 	}
-	//hello world
+	
 	public void numofnodes(){
 		System.out.println("~"+numnode+"~");
 		return;
