@@ -1,0 +1,47 @@
+package aug5;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+
+import july31.GenericHeap;
+
+public class mergedlistsLog {
+
+	public static void main(String[] args) {
+
+	}
+
+	public static ArrayList<Integer> mergeKlists(ArrayList<ArrayList<Integer>> lists){
+		ArrayList<Integer> list=new ArrayList<>();
+		GenericHeap<Pair> heap=new GenericHeap<>(Pair.comparator);
+		for(int i=0;i<lists.size();i++){
+			Pair main=new Pair();
+			main.data=lists.get(i).get(0);
+			main.lno=i;
+			main.ino=0;
+			heap.add(main);
+		}
+		while(heap.size()!=0){
+			Pair top=heap.remove();
+			if(){
+			top.ino++;
+			top.data=lists.get(top.lno).get(ino);
+		}
+			}
+		return list;
+	}
+
+	private static class Pair {
+		int data;
+		int lno;
+		int ino;
+		public static final Paircomparator comparator = new Paircomparator();
+
+		private static class Paircomparator implements Comparator<Pair> {
+			public int compare(Pair o1, Pair o2) {
+				return o2.data - o1.data;
+			}
+		}
+
+	}
+}

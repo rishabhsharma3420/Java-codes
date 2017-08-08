@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Snake/src/def/Main.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="def.Main"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="What does the Internet do That is a concise question with a broad answer The facts show that the&#10;Internet does nothing We travel through it to get to our destination but we do not use it as itself It is a tool&#10;in our human communications capability In my research the article compared the Internet to the telephone&#10;system and said that it was similar to our Interstate highway System The Internet extends the reach of&#10;people so that ideas and services can be exchanged but this does not happen by itself. The Internet is&#10;actually a global network of networks Millions of computers are able to share information with each other&#10;using the telephone lines In fact the Internet links at least 3 million computers at any one time and that&#10;does not count the people logging on just to surf the net It only counts the institutions providing some type&#10;of Internet service or information sharing programs"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Snake"/>
+</launchConfiguration>

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/CRUX 4 (1)/src/oops/Client.java"/>
+<listEntry value="/CRUX 4 (1)/src/game/client.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="oops.Client"/>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="game.client"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="Exasperating farrago of distortions misrepresentations &amp; outright lies being broadcast by an unprincipled showman masquerading as a journalst Doubt thou the stars are fire&#10;Doubt that the sun doth move&#10;Doubt truth to be a liar&#10;But never doubt I love"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="CRUX 4 (1)"/>
 </launchConfiguration>

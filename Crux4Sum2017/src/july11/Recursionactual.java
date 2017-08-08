@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Recursionactual {
 
 	public static void main(String[] args) {
-		String str="abc";
-		System.out.println(getPermutations(str));
+		String str="abcd";
+		System.out.println(ss(str));
 	}
 	public static ArrayList<String> ss(String str){
 		if(str.length()==0){
@@ -22,7 +22,7 @@ public class Recursionactual {
 			mr.add(rs);
 		
 			mr.add(ch+rs);
-			mr.add((int)ch+rs);
+//			mr.add((int)ch+rs);
 		}
 		return mr;
 	}

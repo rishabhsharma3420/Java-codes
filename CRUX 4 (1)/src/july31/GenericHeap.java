@@ -80,4 +80,8 @@ public class GenericHeap<T> {
 			return false;
 		}
 	}
+
+	public T getHP() {
+		return data.get(0);
+	}
 }

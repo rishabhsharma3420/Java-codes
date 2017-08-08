@@ -1,6 +1,9 @@
 package july31;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+
+//import aug5.mergedlistsLog.Pair;
 
 public class Cars implements Comparable<Cars> {
 	private int speed;
@@ -72,4 +75,6 @@ public class Cars implements Comparable<Cars> {
 			return o2.name.compareTo(o1.name);
 		}
 	}
+	
+	
 }

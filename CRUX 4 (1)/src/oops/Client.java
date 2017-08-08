@@ -3,12 +3,18 @@ package oops;
 public class Client {
 
 	public static void main(String[] args) throws Exception {
-
-		Stack f = new DynamicStack(5);
-		for (int i = 1; i <= 6; i++) {
-			f.push(i);
-		}
+		Stack f=new Stack(5);
+		f.push(2);
+		f.push(1);
+		f.push(5);
+		f.push(4);
+		f.push(3);
 		f.display();
+//		Stack f = new DynamicStack(5);
+//		for (int i = 1; i <= 6; i++) {
+//			f.push(i);
+//		}
+//		f.display();
 	}
 
 }

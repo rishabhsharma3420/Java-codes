@@ -1,0 +1,141 @@
+package game;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.Timer;
+
+public class main extends JFrame implements ActionListener {
+
+	private JLabel lblTimer;
+	private JLabel lblScore;
+	private JLabel lblWord;
+	private JTextField txtWord;
+	private JButton btnStart;
+	private JButton btnStop;
+
+	private Timer timer = null;
+	private boolean running = false;
+	private int timeRemaining = 0;
+	private int score = 0;
+	private String[] run;
+
+	public main(String[] args) {
+		run = args;
+		GridLayout layout = new GridLayout(3, 2);
+		super.setLayout(layout);
+
+		Font font = new Font("Comic Sans MS", 2, 100);
+
+		lblTimer = new JLabel("Time");
+		lblTimer.setFont(font);
+		super.add(lblTimer);
+
+		lblScore = new JLabel("Score");
+		lblScore.setFont(font);
+		super.add(lblScore);
+
+		lblWord = new JLabel("");
+		lblWord.setFont(font);
+		super.add(lblWord);
+
+		txtWord = new JTextField("");
+		txtWord.setFont(font);
+		super.add(txtWord);
+
+		btnStart = new JButton("Start");
+		btnStart.setFont(font);
+		btnStart.addActionListener(this);
+		super.add(btnStart);
+
+		btnStop = new JButton("Stop");
+		btnStop.setFont(font);
+		btnStop.addActionListener(this);
+		super.add(btnStop);
+
+		super.setTitle("Text Typer");
+		super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		super.setExtendedState(MAXIMIZED_BOTH);
+		super.setVisible(true);
+
+		startGame();
+	}
+
+	private void startGame() {
+		timer = new Timer(2000, this);
+		running = false;
+		timeRemaining = 50;
+		score = 0;
+
+		lblTimer.setText("Time :" + timeRemaining);
+		lblScore.setText("Score :" + score);
+		lblWord.setText("");
+
+		btnStop.setEnabled(false);
+		txtWord.setEnabled(false);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnStart) {
+			handleStart();
+		} else if (e.getSource() == btnStop) {
+			handleStop();
+		} else if (e.getSource() == timer) {
+			handleTimer();
+		}
+	}
+
+	private void handleTimer() {
+		timeRemaining--;
+		String typed = txtWord.getText().trim();
+		String req = lblWord.getText().trim();
+		if (req.equals(typed)) {
+			score++;
+		}
+		int ridx=(int)(Math.random()*run.length);
+		lblTimer.setText("Time :" + timeRemaining);
+		lblScore.setText("Score :" + score);
+		lblWord.setText(run[ridx]);
+		if (timeRemaining == 0) {
+			handleStop();
+		}
+	}
+
+	private void handleStart() {
+		if (running == false) {
+			timer.start();
+			running = true;
+
+			btnStop.setEnabled(true);
+			txtWord.setEnabled(true);
+			btnStart.setText("Pause");
+		} else {
+			timer.stop();
+			running = false;
+
+			btnStop.setEnabled(false);
+			txtWord.setEnabled(false);
+			btnStart.setText("Start");
+		}
+	}
+
+	private void handleStop() {
+		if (running == true) {
+			timer.stop();
+			running = false;
+
+			btnStop.setEnabled(false);
+			txtWord.setEnabled(false);
+			btnStart.setText("Start");
+		}
+	}
+
+}

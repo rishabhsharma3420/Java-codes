@@ -1,0 +1,9 @@
+package aug6_heapmaking;
+
+public class Hashmap {
+
+	public Hashmap() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

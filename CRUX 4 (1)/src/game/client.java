@@ -1,0 +1,9 @@
+package game;
+
+public class client {
+
+	public static void main(String[] args) {
+		main tt = new main(args);
+	}
+
+}

@@ -1,0 +1,23 @@
+package def;
+
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Main {
+
+	public static void main(String[] args) {
+		JFrame obj = new JFrame();
+		Gameplay gameplay = new Gameplay();
+		obj.setTitle("🐍     :SNAKE:     🐍");
+		obj.setBounds(10, 10, 900, 700);
+		obj.setContentPane(new JLabel(new ImageIcon("wp1809418.png")));
+		obj.setResizable(true);
+		obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		obj.add(gameplay);
+		obj.setVisible(true);
+	}
+
+}

@@ -1,9 +1,0 @@
-package bst;
-
-public class Bst {
-
-	public Bst() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

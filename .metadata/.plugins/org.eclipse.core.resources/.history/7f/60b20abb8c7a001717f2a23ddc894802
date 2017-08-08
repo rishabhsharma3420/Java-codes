@@ -1,0 +1,61 @@
+package aug6_heapmaking;
+
+import java.util.ArrayList;
+
+public class Hashmap<K, V> {
+	private class HMnode {
+		K key;
+		V value;
+	}
+
+	private GenericLL<HMnode>[] buckets;
+	private int size = 0;
+
+	public Hashmap() {
+
+	}
+
+	public void put(K key, V value) {
+		int bi = hashfunction(key);
+		int foundat = findat(buckets[bi], key);
+	}
+
+	private int findat(GenericLL<Hashmap<K, V>.HMnode> genericLL, K key) {
+		return 0;
+	}
+
+	private int hashfunction(K key) {
+		int c = hashCode();
+		c = Math.abs(c);
+		c = c % buckets.length;
+		return c;
+	}
+
+	public V get(K key) {
+
+	}
+
+	public V remove(K key) {
+
+	}
+
+	public boolean containsKey(K key) {
+
+	}
+
+	public int size() {
+
+	}
+
+	public boolean isEmpty() {
+
+	}
+
+	public void display() {
+
+	}
+
+	public ArrayList<K> keyset() {
+
+	}
+}

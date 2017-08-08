@@ -1,0 +1,17 @@
+package aug6_heapmaking;
+
+public class Client {
+
+	public static void main(String[] args) throws Exception {
+		GenericLL<String> ll=new GenericLL<>();
+		ll.addlast("HELLO");
+		ll.addlast("WHO");
+		ll.addlast("ARE");
+		ll.addlast("YOU");
+		ll.addlast("?");
+		ll.display();
+		
+		
+	}
+
+}

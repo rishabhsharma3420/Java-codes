@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CRUX 4 (1)/src/Tesst.java&apos; to &apos;RotateArray.java&apos;" description="Rename resource &apos;Tesst.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Tesst.java" name="RotateArray.java" stamp="1501441106479" updateReferences="true"/>
+</session>

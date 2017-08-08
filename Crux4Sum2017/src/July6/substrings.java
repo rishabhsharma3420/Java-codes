@@ -4,7 +4,7 @@ public class substrings {
 
 	public static void main(String[] args) {
 
-		String str = "abcd";
+		String str = "abc";
 		printsubstring(str);
 //		System.out.println(pall(str));
 //		pallc(str);

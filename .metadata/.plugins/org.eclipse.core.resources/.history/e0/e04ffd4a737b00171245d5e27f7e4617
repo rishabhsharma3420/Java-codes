@@ -1,0 +1,280 @@
+package def;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.color.ColorSpace;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+public class Gameplay extends JPanel implements KeyListener, ActionListener {
+
+	private int score = 0;
+
+	private ImageIcon titleImage;
+
+	private int[] snakexlength = new int[750];
+	private int[] snakeylength = new int[750];
+
+	private int lengthofsnake = 1;
+
+	private boolean left = false;
+	private boolean right = false;
+	private boolean up = false;
+	private boolean down = false;
+
+	private ImageIcon rightmouth;
+	private ImageIcon leftmouth;
+	private ImageIcon upmouth;
+	private ImageIcon downmouth;
+
+	private Timer timer;
+	private int delay = 100;
+
+	private ImageIcon snakeImage;
+
+	private int moves = 0;
+
+	private ImageIcon enemyimage;
+
+	public Gameplay() {
+		addKeyListener(this);
+		setFocusable(true);
+		setFocusTraversalKeysEnabled(false);
+		timer = new Timer(delay, this);
+		timer.start();
+	}
+
+	@Override
+	public void paint(Graphics g) {
+
+		if (moves == 0) {
+			snakexlength[2] = 50;
+			snakexlength[1] = 75;
+			snakexlength[0] = 100;
+
+			snakeylength[2] = 100;
+			snakeylength[1] = 100;
+			snakeylength[0] = 100;
+		}
+		// draw title image border
+		g.setColor(Color.white);
+		g.drawRect(24, 10, 851, 55);
+
+		// draw title image
+		titleImage = new ImageIcon("snaketitle.jpg");
+		titleImage.paintIcon(this, g, 25, 11);
+
+		// draw border for playing area
+		g.setColor(Color.BLACK);
+		g.drawRect(24, 74, 851, 577);
+
+		// draw background for game
+		g.setColor(Color.WHITE);
+		g.fillRect(25, 75, 850, 575);
+
+		// scores
+
+		g.setColor(Color.CYAN);
+		g.setFont(new Font("Comic Sans", 1, 15));
+		g.drawString("SCORE : " + score, 35, 45);
+
+		// length
+		g.setColor(Color.CYAN);
+		g.setFont(new Font("Comic Sans", 1, 15));
+		g.drawString("LENGTH : " + lengthofsnake, 780, 45);
+		boolean start = true;
+		if (start) {
+			rightmouth = new ImageIcon("right.png");
+			rightmouth.paintIcon(this, g, snakexlength[0], snakeylength[0]);
+			start = false;
+		}
+		for (int a = 0; a < lengthofsnake; a++) {
+			if (a == 0 && right) {
+				rightmouth = new ImageIcon("right.png");
+				rightmouth.paintIcon(this, g, snakexlength[a], snakeylength[a]);
+			}
+			if (a == 0 && left) {
+				leftmouth = new ImageIcon("left.png");
+				leftmouth.paintIcon(this, g, snakexlength[a], snakeylength[a]);
+			}
+			if (a == 0 && up) {
+				upmouth = new ImageIcon("up.png");
+				upmouth.paintIcon(this, g, snakexlength[a], snakeylength[a]);
+			}
+			if (a == 0 && down) {
+				downmouth = new ImageIcon("down.png");
+				downmouth.paintIcon(this, g, snakexlength[a], snakeylength[a]);
+			}
+			if (a != 0) {
+				snakeImage = new ImageIcon("e1.png");
+				snakeImage.paintIcon(this, g, snakexlength[a], snakeylength[a]);
+			}
+		}
+
+		enemyimage = new ImageIcon("enemy.png");
+
+		// random enemy position generation
+
+		int enemyx = (int) Math.random();
+		int enemyy = (int) Math.random();
+
+		enemyx = Math.abs(enemyx);
+		enemyy = Math.abs(enemyy);
+
+		// frame adjustment
+
+		enemyx %= 34;
+		enemyy %= 23;
+
+		enemyx++;
+		enemyy += 3;
+
+		enemyx = 25;
+		enemyy = 75;
+
+		// check collision
+
+		if (enemyx == snakexlength[0] && enemyy == snakeylength[0]) {
+			lengthofsnake++;
+			score++;
+		}
+
+		enemyimage.paintIcon(this, g, enemyx, enemyy);
+
+		g.dispose();
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			moves++;
+			right = true;
+			if (!left) {
+				right = true;
+			} else {
+				right = false;
+				left = true;
+			}
+			up = false;
+			down = false;
+		}
+		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+			moves++;
+			left = true;
+			if (!right) {
+				left = true;
+			} else {
+				left = false;
+				right = true;
+			}
+			up = false;
+			down = false;
+		}
+		if (e.getKeyCode() == KeyEvent.VK_UP) {
+			moves++;
+			up = true;
+			if (!down) {
+				up = true;
+			} else {
+				up = false;
+				down = true;
+			}
+			left = false;
+			right = false;
+		}
+		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+			moves++;
+			down = true;
+			if (!up) {
+				down = true;
+			} else {
+				down = false;
+				up = true;
+			}
+			left = false;
+			right = false;
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		timer.start();
+		if (right) {
+			for (int r = lengthofsnake - 1; r >= 0; r--) {
+				snakeylength[r + 1] = snakeylength[r];
+			}
+			for (int r = lengthofsnake; r >= 0; r--) {
+				if (r == 0) {
+					snakexlength[r] += 25;
+				} else {
+					snakexlength[r] = snakexlength[r - 1];
+				}
+				if (snakexlength[r] > 850) {
+					snakexlength[r] = 25;
+				}
+			}
+			repaint();
+		} else if (left) {
+			for (int r = lengthofsnake - 1; r >= 0; r--) {
+				snakeylength[r + 1] = snakeylength[r];
+			}
+			for (int r = lengthofsnake; r >= 0; r--) {
+				if (r == 0) {
+					snakexlength[r] -= 25;
+				} else {
+					snakexlength[r] = snakexlength[r - 1];
+				}
+				if (snakexlength[r] < 25) {
+					snakexlength[r] = 850;
+				}
+			}
+			repaint();
+
+		} else if (up) {
+			for (int r = lengthofsnake - 1; r >= 0; r--) {
+				snakexlength[r + 1] = snakexlength[r];
+			}
+			for (int r = lengthofsnake; r >= 0; r--) {
+				if (r == 0) {
+					snakeylength[r] -= 25;
+				} else {
+					snakeylength[r] = snakeylength[r - 1];
+				}
+				if (snakeylength[r] < 75) {
+					snakeylength[r] = 625;
+				}
+			}
+			repaint();
+		} else if (down) {
+			for (int r = lengthofsnake - 1; r >= 0; r--) {
+				snakexlength[r + 1] = snakexlength[r];
+			}
+			for (int r = lengthofsnake; r >= 0; r--) {
+				if (r == 0) {
+					snakeylength[r] += 25;
+				} else {
+					snakeylength[r] = snakeylength[r - 1];
+				}
+				if (snakeylength[r] > 625) {
+					snakeylength[r] = 75;
+				}
+			}
+			repaint();
+		}
+	}
+}

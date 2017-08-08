@@ -1,0 +1,21 @@
+package def;
+
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
+public class Main {
+
+	public static void main(String[] args) {
+		JFrame obj = new JFrame();
+		Gameplay gameplay = new Gameplay();
+		obj.setTitle("🐍 SNAKE 🐍");
+		obj.setBounds(20, 20, 905, 700);
+		obj.setBackground(Color.BLACK);
+		obj.setResizable(true);
+		obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		obj.add(gameplay);
+		obj.setVisible(true);
+	}
+
+}

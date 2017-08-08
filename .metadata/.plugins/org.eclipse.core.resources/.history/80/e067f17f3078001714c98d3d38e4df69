@@ -1,0 +1,34 @@
+package paritosh;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class dsfasf {
+
+    public static void main(String[] args) {
+//    HELLO(1);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n=0;
+        int[] arr = null;
+        try {
+             n = Integer.parseInt(br.readLine());
+             
+//             System.out.println(n);
+             arr= new int[n];
+             for(int i=0;i<n;i++){
+                 arr[i] = Integer.parseInt(br.readLine());
+             }
+             
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(n);
+        System.out.println(arr[0]);
+
+    }
+
+    public static void abcd(int n){
+        System.out.println("HELLO WORLD");
+    }
+}

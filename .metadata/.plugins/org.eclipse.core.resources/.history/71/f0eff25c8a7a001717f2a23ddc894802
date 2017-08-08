@@ -1,0 +1,46 @@
+package aug6_heapmaking;
+
+import java.util.ArrayList;
+
+public class Hashmap<K, V> {
+	private class HMnode {
+		K key;
+		V value;
+	}
+
+	public Hashmap() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void put(K key, V value) {
+
+	}
+
+	public V get(K key) {
+
+	}
+
+	public V remove(K key) {
+
+	}
+
+	public boolean containsKey(K key) {
+
+	}
+
+	public int size() {
+
+	}
+
+	public boolean isEmpty() {
+
+	}
+
+	public void display() {
+
+	}
+
+	public ArrayList<K> keyset() {
+
+	}
+}
